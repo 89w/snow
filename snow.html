@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>雪花粒子效果</title>
+  </head>
+  <body>
+    <div id="tsparticles"></div>
+
+    <script src="https://cdn.jsdelivr.net/npm/@tsparticles/preset-snow@3/tsparticles.preset.snow.bundle.min.js"></script>
+    <script>
+      (async () => {
+        await loadSnowPreset(tsParticles);
+
+        await tsParticles.load({
+          id: "tsparticles",
+          options: {
+            preset: "snow",
+            background: {
+              color: "transparent",
+            },
+            particles: {
+              autoPlay: true,
+              number: {
+                value: 100, // 粒子数量
+              },
+              size: {
+                value: { min: 1, max: 50 }, // 粒子大小范围
+              },
+              move: {
+                speed: 30, // 粒子移动速度
+              },
+              color: {
+                value: "#000000", // 粒子颜色
+              },
+              opacity: {
+                value: { min: 0.1, max: 0.9 }, // 粒子透明度范围
+              },
+            },
+          },
+        });
+      })();
+    </script>
+  </body>
+</html>
